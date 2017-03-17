@@ -1,0 +1,9 @@
+{
+  "name": "goblin-gaboratory",
+  "version": "0.0.1",
+  "description": "从零开始 angular1.x webpack component",
+  "main": "index.js",
+  "repository": "https://github.com/gtUserName/goblin-gaboratory.git",
+  "author": "Kunkka <song.dxs@gmail.com>",
+  "license": "MIT"
+}
