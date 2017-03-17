@@ -66,19 +66,28 @@ module.exports = {
   }
 };
 ```
-4. add angular  
+5. add angular  
 由于要配合 ```angular-material``` 使用，所以指定使用 ```angular@1.5.5``` 版本
 ```
 yarn add angular@1.5.5 angular-animate@1.5.5  angular-aria@1.5.5 angular-messages@1.5.5 angular-material
 ```
-5. 入口文件
+6. 入口文件
 ```js
-//src/app/app.js
+// src/app/app.js
 import angular from 'angular';
 console.log("Hello world!");
 ```
 5. 运行 Hello world
-```
+```cmd
+$ ./node_modules/.bin/webpack
+Hash: 8ddfacc88a2d4c3cb1be
+Version: webpack 2.2.1
+Time: 887ms
+            Asset     Size  Chunks                    Chunk Names
+    app.bundle.js  1.15 MB       0  [emitted]  [big]  app
+app.bundle.js.map  1.37 MB       0  [emitted]         app
+   [0] ./~/angular/index.js 48 bytes {0} [built]
+   [1] ./~/angular/angular.js 1.15 MB {0} [built]
+   [2] ./src/app/app.js 62 bytes {0} [built]
 
 ```
-### 
