@@ -1,9 +1,19 @@
 {
   "name": "goblin-gaboratory",
-  "version": "0.0.1",
-  "description": "从零开始 angular1.x webpack component",
+  "version": "0.0.3",
+  "description": "从零开始 angular1.x es6 webpack2 component",
   "main": "index.js",
   "repository": "https://github.com/gtUserName/goblin-gaboratory.git",
-  "author": "Kunkka <song.dxs@gmail.com>",
-  "license": "MIT"
+  "author": "song <song.dxs@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "angular": "1.5.5",
+    "angular-animate": "1.5.5",
+    "angular-aria": "1.5.5",
+    "angular-material": "^1.1.3",
+    "angular-messages": "1.5.5"
+  }
 }
