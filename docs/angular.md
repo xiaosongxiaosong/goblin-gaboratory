@@ -288,13 +288,13 @@ yarn add angular-ui-router@1.0.0
 * [Angular 1.x和ES6的结合](https://github.com/xufei/blog/issues/29)
 * [AngularClass/NG6-starter](https://github.com/AngularClass/NG6-starter)
 
-### Step6：demo代码
+### Step6：demo
 webpack-dev-server启动调试server
 ```
 ./node_modules/.bin/webpack-dev-server
 ```
 访问 ```http://localhost:8080/#/```  
-![http://localhost:8080/#/](img/demo01.png home页面)
+![alt](./img/demo01.png "title")
 
 ### Step7：自动生成模块
 **
