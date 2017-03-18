@@ -297,6 +297,15 @@ webpack-dev-server启动调试server
 ![alt](./img/demo01.png "title")
 
 ### Step7：自动生成模块
-**
-参考资料
+*参考资料*
 * [AngularClass/NG6-starter](https://github.com/AngularClass/NG6-starter)
+
+
+# TODO:
+- 代码压缩
+- vendor
+- 完整的demo页面
+- node-sass安装失败
+
+*参考资料*
+* [UltimateAngular/ultimate-angular-master-seed](https://github.com/UltimateAngular/ultimate-angular-master-seed)
