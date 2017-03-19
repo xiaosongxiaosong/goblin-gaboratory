@@ -1,6 +1,6 @@
 {
   "name": "goblin-gaboratory",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "从零开始 angular1.x es6 webpack2 component",
   "main": "index.js",
   "repository": "https://github.com/gtUserName/goblin-gaboratory.git",
