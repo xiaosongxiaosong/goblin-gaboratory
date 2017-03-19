@@ -328,31 +328,36 @@ gulp.task('component', () => {
     }))
     .pipe(gulp.dest(destPath));
 });
-```
-3. component 模板文件
-*待补充*
+```  
+
+3. component 模板文件  
+*待补充*  
+  
+
 4. 测试
 - 生成一级组件
 ```
 ./node_modules/.bin/gulp component --name test
 ```
 生成的 component在 "src/app/components/test" 目录
+  
 
 - 生成子component方法
 ```
 ./node_modules/.bin/gulp component --name test --parent test
 ```
+生成的 component在 "src/app/components/test/test" 目录  
+
 
 参考资料
 * [AngularClass/NG6-starter](https://github.com/AngularClass/NG6-starter)
 
 
 # TODO:
-- 自动生成模块
 - 代码压缩
 - vendor
 - 完整的demo页面
-- node-sass安装失败
+- node-sass安装失败问题
 
 参考资料
 * [UltimateAngular/ultimate-angular-master-seed](https://github.com/UltimateAngular/ultimate-angular-master-seed)
