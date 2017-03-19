@@ -283,7 +283,7 @@ yarn add angular-ui-router@1.0.0
 ```
 
 ### Step5：demo代码
-*demo代码说明待补充*
+*demo代码说明待补充*  
 参考资料
 * [Angular 1.x和ES6的结合](https://github.com/xufei/blog/issues/29)
 * [AngularClass/NG6-starter](https://github.com/AngularClass/NG6-starter)
@@ -296,16 +296,63 @@ webpack-dev-server启动调试server
 访问 ```http://localhost:8080/#/```  
 ![alt](./img/demo01.png "title")
 
-### Step7：自动生成模块
-*参考资料*
+### Step7：快速创建component
+1. 安装 gulp, gulp-rename, gulp-template
+```
+yarn add --dev gulp gulp-rename gulp-template
+```
+2. 根目录下创建gulpfile.js文件
+```js
+const gulp     = require('gulp');
+const path     = require('path');
+const rename   = require('gulp-rename');
+const template = require('gulp-template');
+const yargs    = require('yargs');
+
+gulp.task('component', () => {
+  const cap = (val) => {
+    return val.charAt(0).toUpperCase() + val.slice(1);
+  };
+  const name = yargs.argv.name;
+  const parentPath = yargs.argv.parent || '';
+  const destPath = path.join('src/app/components', parentPath, name);
+  const blankTemplates = path.join(__dirname, 'generator', 'component/**/*.**');
+
+  return gulp.src(blankTemplates)
+    .pipe(template({
+      name: name,
+      upCaseName: cap(name)
+    }))
+    .pipe(rename((path) => {
+      path.basename = path.basename.replace('temp', name);
+    }))
+    .pipe(gulp.dest(destPath));
+});
+```
+3. component 模板文件
+*待补充*
+4. 测试
+- 生成一级组件
+```
+./node_modules/.bin/gulp component --name test
+```
+生成的 component在 "src/app/components/test" 目录
+
+- 生成子component方法
+```
+./node_modules/.bin/gulp component --name test --parent test
+```
+
+参考资料
 * [AngularClass/NG6-starter](https://github.com/AngularClass/NG6-starter)
 
 
 # TODO:
+- 自动生成模块
 - 代码压缩
 - vendor
 - 完整的demo页面
 - node-sass安装失败
 
-*参考资料*
+参考资料
 * [UltimateAngular/ultimate-angular-master-seed](https://github.com/UltimateAngular/ultimate-angular-master-seed)
