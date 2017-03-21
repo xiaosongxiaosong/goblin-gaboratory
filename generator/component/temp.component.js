@@ -1,6 +1,6 @@
 import template from './<%= name %>.html';
 import controller from './<%= name %>.controller';
-import './<%= name %>.scss';
+import './<%= name %>.css';
 
 let <%= name %>Component = {
   restrict: 'E',

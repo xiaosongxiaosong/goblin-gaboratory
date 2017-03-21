@@ -4,6 +4,7 @@ import controller from './navbar.controller';
 
 let navbarComponent = {
   restrict: 'E',
+  transclude: true,
   bindings: {},
   template,
   controller

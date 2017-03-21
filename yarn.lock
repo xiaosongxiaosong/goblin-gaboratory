@@ -2563,6 +2563,10 @@ map-cache@^0.2.0:
   version "0.2.2"
   resolved "http://registry.npm.taobao.org/map-cache/download/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
 
+material-design-icons@^3.0.1:
+  version "3.0.1"
+  resolved "http://registry.npm.taobao.org/material-design-icons/download/material-design-icons-3.0.1.tgz#9a71c48747218ebca51e51a66da682038cdcb7bf"
+
 math-expression-evaluator@^1.2.14:
   version "1.2.16"
   resolved "http://registry.npm.taobao.org/math-expression-evaluator/download/math-expression-evaluator-1.2.16.tgz#b357fa1ca9faefb8e48d10c14ef2bcb2d9f0a7c9"

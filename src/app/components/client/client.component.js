@@ -1,6 +1,6 @@
 import template from './client.html';
 import controller from './client.controller';
-// import './client.scss';
+import './client.css';
 
 let clientComponent = {
   restrict: 'E',

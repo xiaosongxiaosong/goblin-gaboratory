@@ -1,8 +1,16 @@
-<nav class="navbar">
-  <div class="logo">
-    <h1><a ui-sref="home">{{ $ctrl.name }}</a></h1>
-  </div>
-  <div class="nav-links">
-    <span><a ui-sref="about">about</a></span>
-  </div>
-</nav>
+<md-button aria-label="Go Back">
+  趣观微看店&nbsp;&nbsp;&nbsp;&nbsp;
+</md-button>
+<h2 flex md-truncate>
+  <div ng-transclude></div>
+</h2>
+<md-button aria-label="账户">
+  <md-tooltip md-direction="bottom">账户信息</md-tooltip>
+  <i class="material-icons">account_circle</i>
+  <span>账户</span>
+</md-button>
+<md-button aria-label="注销">
+  <md-tooltip md-direction="bottom">注销用户</md-tooltip>
+  <i class="material-icons">exit_to_app</i>
+  <span>注销</span>
+</md-button>

@@ -29,7 +29,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules'], //import 文件默认先从src目录找，没有再去node_modules，减少import src目录文件层级
-    extensions: ['.js', '.css'],  // import js和css 文件时不需要写文件后缀名
+    extensions: ['.js'],  // import js和css 文件时不需要写文件后缀名
   },
   module: {
     rules: [{
@@ -40,20 +40,14 @@ module.exports = {
         options: { presets: ['es2015'] }
       }]
     }, {
-      test: /\.css$/,   // 处理css文件，增加css loader后可以直接在js文件中import css文件，加载的时候会将样式通过style element的形式增加到dom树中
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: { modules: true }
-        },
-      ],
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader'],
     }, {
       test: /\.(png|jpg)$/, // 将小的图pain处理成base64编码的方式，减少网页请求（暂未实测）
       use: [
         'url-loader?limit=8192'
       ],
-    }, 
+    },
     // {
     //  test: /\.scss$/,  // 处理scss文件，在js文件中可以直接import
     //  use: [{

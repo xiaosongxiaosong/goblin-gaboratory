@@ -1,12 +1,12 @@
 import angular from 'angular';
-import Home from './home/home';
-import About from './about/about';
+import Loading from './loading/loading';
 import Client from './client/client';
+import Project from './client/project/project';
 
-let componentModule = angular.module('app.components', [
-  Home,
-  About,
-  Client
+const componentModule = angular.module('app.components', [
+  Loading,
+  Client,
+  Project
 ])
 
 .name;

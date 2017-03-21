@@ -1,8 +1,8 @@
 import template from './app.html';
 // import controller from './app.controller';
-// import './app.scss';
+import './app.css';
 
-let appComponent = {
+const appComponent = {
   template,
   restrict: 'E'
 };

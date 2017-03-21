@@ -1,25 +1,24 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import clientComponent from './client.component';
+import Project from './project/project';
 
-let clientModule = angular.module('client', [
-  uiRouter
+const clientModule = angular.module('client', [
+  uiRouter,
+  Project
 ])
 
-.config(($stateProvider, $urlRouterProvider) => {
-  "ngInject";
+  .component('client', clientComponent)
 
-  // $urlRouterProvider.otherwise('/client');
+  .config(($stateProvider) => {
+    'ngInject';
+    $stateProvider
+      .state('client', {
+        url: '/client',
+        component: 'client'
+      });
+  })
 
-  $stateProvider
-    .state('client', {
-      url: '/client',
-      component: 'client'
-    });
-})
-
-.component('client', clientComponent)
-  
-.name;
+  .name;
 
 export default clientModule;

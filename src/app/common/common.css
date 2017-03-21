@@ -1,0 +1,9 @@
+.contaier{
+  height: 100%;
+}
+.material-icons{
+  vertical-align: middle;
+}
+.md-button:not([disabled]).active{
+  background-color: rgba(158,158,158,0.2);
+}

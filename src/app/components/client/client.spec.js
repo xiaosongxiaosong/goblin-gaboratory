@@ -1,16 +1,16 @@
-import TestModule from './test'
-import TestController from './test.controller';
-import TestComponent from './test.component';
-import TestTemplate from './test.html';
+import ClientModule from './client'
+import ClientController from './client.controller';
+import ClientComponent from './client.component';
+import ClientTemplate from './client.html';
 
-describe('Test', () => {
+describe('Client', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(TestModule));
+  beforeEach(window.module(ClientModule));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new TestController();
+      return new ClientController();
     };
   }));
 
@@ -30,20 +30,20 @@ describe('Test', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(TestTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
+      expect(ClientTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
       // component/directive specs
-      let component = TestComponent;
+      let component = ClientComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(TestTemplate);
+        expect(component.template).to.equal(ClientTemplate);
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(TestController);
+        expect(component.controller).to.equal(ClientController);
       });
   });
 });
