@@ -14,6 +14,7 @@ module.exports = {
       'angular-aria',
       'angular-messages',
       'angular-ui-router',
+      'angular-resource',
       'angular-material'
     ],
     // app 入口文件

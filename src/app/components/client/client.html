@@ -1,34 +1,31 @@
 <div layout="column" class="contaier">
   <md-toolbar layout="row">
     <navbar class="md-toolbar-tools">
-      <md-menu>
-        <md-button>
-          <md-tooltip md-direction="bottom">切换店铺</md-tooltip>
-          <span>测试</span>
-          <i class="material-icons">expand_more</i>
-        </md-button>
-        <md-menu-content width="4">
+      <md-menu md-offset="0 46">
+        <!-- Trigger element is a md-button with an icon -->
+        <span class="group-button">
+          <md-button class="left">
+            <span>测试</span>
+          </md-button><md-button class="right" ng-click="$mdMenu.open($event)">
+            <md-tooltip md-direction="bottom">切换店铺</md-tooltip>
+            <i class="material-icons">expand_more</i>
+          </md-button>
+        </span>
+        <md-menu-content>
           <md-menu-item>
-            <md-button ng-click="ctrl.redial($event)">
-              <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
-              Redial
-            </md-button>
-          </md-menu-item>
-          <md-menu-item>
-            <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
-              <md-icon md-svg-icon="call:voicemail"></md-icon>
-              Check voicemail
-            </md-button>
-          </md-menu-item>
-          <md-menu-divider></md-menu-divider>
-          <md-menu-item>
-            <md-button ng-click="ctrl.toggleNotifications()">
-              <md-icon md-svg-icon="social:notifications-{{ctrl.notificationsEnabled ? 'off' : 'on'}}"></md-icon>
-              {{ctrl.notificationsEnabled ? 'Disable' : 'Enable' }} notifications
-            </md-button>
+            <md-button>Do Something</md-button>
           </md-menu-item>
         </md-menu-content>
       </md-menu>
+      <!--<md-button>
+        <md-tooltip md-direction="bottom">切换店铺</md-tooltip>
+        <span>测试</span>
+        <i class="material-icons">expand_more</i>
+      </md-button>-->
+
+      <!--<section layout="row" layout-align="center center">-->
+
+      <!--</section>-->
     </navbar>
     <!--<div class="md-toolbar-tools">
       <h1 layout-align-gt-sm="center">

@@ -62,6 +62,10 @@ angular-messages@1.5.5:
   version "1.5.5"
   resolved "http://registry.npm.taobao.org/angular-messages/download/angular-messages-1.5.5.tgz#2a126d34e90580c45212aeb4d04152147771e6af"
 
+angular-resource@1.5.5:
+  version "1.5.5"
+  resolved "http://registry.npm.taobao.org/angular-resource/download/angular-resource-1.5.5.tgz#ecdcd30cd544411943606ccb842ffdddf4ed7692"
+
 angular-ui-router@1.0.0:
   version "1.0.0-rc.1"
   resolved "http://registry.npm.taobao.org/angular-ui-router/download/angular-ui-router-1.0.0-rc.1.tgz#2d168230e8204fc8d2a93d1007ad49b9f33d09c6"

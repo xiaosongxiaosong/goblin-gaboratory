@@ -6,18 +6,24 @@ const loadingModule = angular.module('loading', [
   uiRouter
 ])
 
-.component('loading', loadingComponent)
+  .component('loading', loadingComponent)
 
-.config(($stateProvider, $urlRouterProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
     $stateProvider
       .state('loading', {
         url: '/',
-        component: 'loading'
+        component: 'loading',
+        resolve: {
+          params: function ($stateParams) {
+            debugger;
+            return $stateParams;
+          }
+        }
       });
     $urlRouterProvider.otherwise('/');
   })
 
-.name;
+  .name;
 
 export default loadingModule;

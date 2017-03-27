@@ -6,6 +6,9 @@
   "repository": "https://github.com/gtUserName/goblin-gaboratory.git",
   "author": "song <song.dxs@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "server": "webpack-dev-server"
+  },
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
@@ -29,6 +32,7 @@
     "angular-aria": "1.5.5",
     "angular-material": "^1.1.3",
     "angular-messages": "1.5.5",
+    "angular-resource": "1.5.5",
     "angular-ui-router": "1.0.0",
     "material-design-icons": "^3.0.1"
   }
