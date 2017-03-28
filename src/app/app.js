@@ -17,16 +17,18 @@ angular.module('app', [
   Components
 ])
 
-  .run(function ($transitions, $state, User) {
+  .run(function ($transitions, $state, Data, Auth) {
     'ngInject';
+    // 初始化data namespace
+    Data.init();
 
     $transitions.onStart({
       to: 'client.**'
     }, (trans) => {
-      if (true !== User.isSignedIn()) {
+      if (true !== Auth.isSignedIn()) {
+        debugger;
         return $state.target('loading', {
-          from: trans.$to().name,
-          params: trans.$to().params
+          from: trans.$to().name
         });
       } else {
         return true;

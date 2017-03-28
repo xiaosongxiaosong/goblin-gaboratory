@@ -1,29 +1,21 @@
-let UserFactory = function () {
-  let user = {
+let AuthFactory = function () {
+  let auth = {
     isSignedIn: false,
     needSignedIn: true
   };
 
-  let getUser = () => {
-    return user;
-  };
-
-  let isSignedIn = () => {
-    return user.isSignedIn;
-  };
-
   return {
     isSignedIn() {
-      return (!user.needSignedIn) || user.isSignedIn;
+      return (!auth.needSignedIn) || auth.isSignedIn;
     },
     needSignedIn() {
-      return user.needSignedIn;
+      return auth.needSignedIn;
     },
     setSingedIn() {
-      user.isSignedIn = true;
+      auth.isSignedIn = true;
     },
     setNeedSignedIn() {
-      user.needSignedIn = false;
+      auth.needSignedIn = false;
     },
     login(info) {
       return new Promise(function (resolve, reject) {
@@ -37,4 +29,4 @@ let UserFactory = function () {
   };
 };
 
-export default UserFactory;
+export default AuthFactory;

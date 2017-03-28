@@ -10,18 +10,11 @@ const loadingModule = angular.module('loading', [
 
   .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
-    $stateProvider
-      .state('loading', {
-        url: '/',
-        component: 'loading',
-        resolve: {
-          params: function ($stateParams) {
-            debugger;
-            return $stateParams;
-          }
-        }
-      });
-    $urlRouterProvider.otherwise('/');
+    
+    $stateProvider.state('loading', {
+      url: '/loading/:from',
+      component: 'loading'
+    });
   })
 
   .name;

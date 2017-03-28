@@ -3,16 +3,14 @@ import uiRouter from 'angular-ui-router';
 // import { User, Data } from '../../common/common';
 
 class LoadingController {
-  constructor($state, $transitions, Data, User) {
+  constructor($state, $stateParams, Data, Auth) {
     // console.log($state.params.from);
     debugger;
-    // 初始化data namespace
-    Data.init();
     // 根据页面类型进行处理：
     // 1. 用户登陆、注册、找回密码页面改变登陆检查返回值，返回原页面
     // 2. 其他页面进行登陆处理
-    if (undefined !== $state.params.from && 0 === $state.params.from.find(/user/)){
-      User.setNeedSignedIn();
+    if (undefined !== $state.params.from && 0 === $state.params.from.search(/user/)){
+      Auth.setNeedSignedIn();
       this.jump2Src();
       return;
     }
@@ -23,14 +21,14 @@ class LoadingController {
     // 3. 启动定时器定时更新jwt
     let userInfo = Data.getItem('userInfo');
     if (undefined === userInfo || new Date().getTime() -  userInfo.ctime > 30 * 24 * 60 * 60 * 1000){
-      if (User.needSignedIn()){
+      if (Auth.needSignedIn()){
         this.jump2Login();
       } else {
         this.jump2Src();
       }
       return;
     }
-    User.login(userInfo).then(function(){
+    Auth.login(userInfo).then(function(){
       this.jump2Src();
     }, function(){
       this.jump2Login();
