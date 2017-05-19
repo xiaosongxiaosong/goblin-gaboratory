@@ -1,7 +1,7 @@
 <view>
   <scroll-view class="weui-panel" style="height:900rpx;" scroll-y="true">
     <view class="weui-panel__bd">
-      <navigator wx:for-items="{{list}}" wx:key="{{item.id}}" url="pages/owner/index?owner={{item.owner}}&repo={{item.repo}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <navigator wx:for-items="{{list}}" wx:key="{{item.id}}" url="../owner/index?owner={{item.owner}}&repo={{item.repo}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
         <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
           <image class="weui-media-box__thumb" src="{{item.avatar_url}}" />
         </view>
