@@ -1,11 +1,35 @@
 {
   "pages": [
-    
     "page/subscription/index",
     "page/subscription/pages/owner/index",
     "page/subscription/pages/issue/index",
-    "page/subscription/pages/add/index"
+    "page/subscription/pages/add/index",
+    "page/subscription/pages/history/index"
   ],
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#A0DCFF",
+    "list": [
+      {
+        "pagePath": "page/subscription/index",
+        "text": "首页",
+        "iconPath": "../image/icon_home.png",
+        "selectedIconPath": "../image/icon_home_HL.png"
+      },
+      {
+        "pagePath": "page/subscription/pages/add/index",
+        "text": "添加",
+        "iconPath": "../image/icon_add.png",
+        "selectedIconPath": "../image/icon_add_HL.png"
+      },
+      {
+        "pagePath": "page/subscription/pages/history/index",
+        "text": "历史消息",
+        "iconPath": "../image/icon_history.png",
+        "selectedIconPath": "../image/icon_history_HL.png"
+      }
+    ]
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": " ",
