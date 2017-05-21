@@ -1,8 +1,12 @@
 <scroll-view class="weui-panel" scroll-y="true">
   <view class="weui-cells weui-cells_after-title">
     <navigator wx:for-items="{{issuesList}}" wx:key="{{item.id}}" url="/page/subscription/pages/issue/index?owner={{item.owner}}&repo={{item.repo}}&number={{item.number}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__bd">{{item.user.login}}</view>
-      <view class="weui-cell__bd">{{item.title}}</view>
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="{{item.user.avatar_url}}" />
+      </view>
+      <view class="weui-cell__bd">
+        <label>{{item.user.login}} \n {{item.title}}</label>
+      </view>
       <view class="weui-cell__ft weui-cell__ft_in-access">{{item.created_at}}</view>
     </navigator>
   </view>
