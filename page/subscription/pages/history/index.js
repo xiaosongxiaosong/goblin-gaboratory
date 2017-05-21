@@ -3,15 +3,15 @@ const github = require('../../../../util/github');
 
 Page({
   data: {
-    list: []
+    issuesList: []
   },
   totle: 0,
   count: 0,
   onLoad: function () {
-    
+
   },
   onShow: function () {
-    this.data.list = []
+    this.data.issuesList = []
     this.load();
   },
   load: function () {
@@ -19,30 +19,48 @@ Page({
     this.totle = list.length;
     this.count = 0;
 
-    if (0 === this.totle){
+    if (0 === this.totle) {
       that.setData({
-        list: []
+        issuesList: []
       });
     } else {
       list.map(this.get, this);
     }
   },
   get: function (item) {
-    var list = this.data.list;
-
     var that = this;
     github.getUserInfo(item).then(function (userinfo) {
       that.count = that.count + 1;
-
       userinfo = Object.assign({}, item, userinfo);
-      list.push(userinfo);
+      return new Promise(function (resolve, reject) {
+        github.getIssues(userinfo).then(function (issues) {
+          issues.map(function (item) {
+            item.created_at = item.created_at.split('T')[0];
+            item.owner = userinfo.owner;
+            item.repo = userinfo.repo;
+          });
+          return new Promise(function(resolve, reject){
+            resolve(issues);
+            return;
+          });
+        }).then(function (issues) {
+          var tempList = that.data.issuesList;
+          that.data.issuesList = tempList.concat(issues);
+          resolve();
+        }).catch(function(){
+          reject();
+          return;
+        })
+      });
+    }).then(function () {
       that.setData({
-        list: list
+        issuesList: issuesList.slice(0,100)
       });
     }).catch(function () {
       that.count = that.count + 1;
+      console.log(that.data);
       that.setData({
-        list: list
+        issuesList: that.data.issuesList.slice(2,100)
       });
     });
   }
