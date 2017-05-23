@@ -27,7 +27,6 @@ Page({
     } else {
       Promise.all(list.map(that.get, that))
         .then(function () {
-          console.log(that.data.issuesList.length)
           that.setData({
             issuesList: that.data.issuesList
           });

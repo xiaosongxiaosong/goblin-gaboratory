@@ -95,7 +95,6 @@ module.exports = {
   getIssues: function (info) {
     let owner = info.owner;
     let user = storage.get(owner);
-    console.log(user)
     if (user && user.issues && user.lastupdate 
     && (Date.parse(user.lastupdate) == Date.parse(new Date().toDateString()))) {
       return new Promise(function (resolve, reject) {
