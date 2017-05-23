@@ -5,7 +5,7 @@
         <image class="weui-media-box__thumb" src="{{item.user.avatar_url}}" />
       </view>
       <view class="weui-cell__bd">
-        <label>{{item.user.login}} \n {{item.title}}</label>
+        <text>{{item.user.login}}\n{{item.title}}</text>
       </view>
       <view class="weui-cell__ft weui-cell__ft_in-access">{{item.created_at}}</view>
     </navigator>
