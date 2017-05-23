@@ -11,7 +11,7 @@ Page({
 
   },
   onShow: function () {
-    this.data.issuesList = []
+    this.data.issuesList = [];
     this.load();
   },
   load: function () {
@@ -27,13 +27,9 @@ Page({
     } else {
       Promise.all(list.map(that.get, that))
         .then(function () {
-          console.log(that.data.issuesList[0]);
-
-          that.data.issuesList.sort(function(a, b){
-
-          })
+          console.log(that.data.issuesList.length)
           that.setData({
-            issuesList: that.data.issuesList.slice(0, 100)
+            issuesList: that.data.issuesList
           });
         }).catch(function (err) {
           console.log('catch exception' + err)
@@ -46,10 +42,17 @@ Page({
       that.count = that.count + 1;
       userinfo = Object.assign({}, item, userinfo);
       return github.getIssues(userinfo).then(function (issues) {
-        issues.map(function (item) {
-          item.created_at = item.created_at.split('T')[0];
-          item.owner = userinfo.owner;
-          item.repo = userinfo.repo;
+        issues = issues.map(function (item) {
+          var listItem = {};
+          listItem.created_at = item.created_at.split('T')[0];
+          listItem.owner = userinfo.owner;
+          listItem.repo = userinfo.repo;
+          listItem.number = item.number;
+          listItem.title = item.title;
+          listItem.avatar_url = item.user.avatar_url;
+          listItem.login = item.user.login;
+          listItem.id = item.id;
+          return listItem;
         });
 
         var tempList = that.data.issuesList;
