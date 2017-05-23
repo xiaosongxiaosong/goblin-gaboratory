@@ -23,6 +23,8 @@ Page({
         info: issue
       });
 
+      github.setIssueReaded(params);
+
       wx.setNavigationBarTitle({
         title: issue.title
       });
