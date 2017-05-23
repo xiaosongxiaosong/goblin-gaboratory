@@ -1,5 +1,5 @@
-const Promise = require('../../util/bluebird.min');
-const github = require('../../util/github');
+const Promise = require('../../../../util/bluebird.min');
+const github = require('../../../../util/github');
 
 Page({
   data: {

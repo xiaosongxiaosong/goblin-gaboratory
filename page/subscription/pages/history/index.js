@@ -1,0 +1,63 @@
+const Promise = require('../../../../util/bluebird.min');
+const github = require('../../../../util/github');
+
+Page({
+  data: {
+    issuesList: []
+  },
+  totle: 0,
+  count: 0,
+  onLoad: function () {
+
+  },
+  onShow: function () {
+    this.data.issuesList = []
+    this.load();
+  },
+  load: function () {
+    var list = github.getSubs();
+    this.totle = list.length;
+    this.count = 0;
+    var that = this;
+
+    if (0 === this.totle) {
+      that.setData({
+        issuesList: []
+      });
+    } else {
+      Promise.all(list.map(that.get, that))
+        .then(function () {
+          console.log(that.data.issuesList[0]);
+
+          that.data.issuesList.sort(function(a, b){
+
+          })
+          that.setData({
+            issuesList: that.data.issuesList.slice(0, 100)
+          });
+        }).catch(function (err) {
+          console.log('catch exception' + err)
+        })
+    }
+  },
+  get: function (item) {
+    var that = this;
+    return github.getUserInfo(item).then(function (userinfo) {
+      that.count = that.count + 1;
+      userinfo = Object.assign({}, item, userinfo);
+      return github.getIssues(userinfo).then(function (issues) {
+        issues.map(function (item) {
+          item.created_at = item.created_at.split('T')[0];
+          item.owner = userinfo.owner;
+          item.repo = userinfo.repo;
+        });
+
+        var tempList = that.data.issuesList;
+        that.data.issuesList = tempList.concat(issues);
+        return new Promise(function(resolve, reject){
+          resolve();
+        });
+      })
+    });
+  }
+})
