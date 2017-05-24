@@ -3,7 +3,7 @@ const github = require('../../util/github');
 
 Page({
   data: {
-    list: []
+    issuesList: []
   },
   totle: 0,
   count: 0,
@@ -11,39 +11,58 @@ Page({
     
   },
   onShow: function () {
-    this.data.list = []
+    this.data.issuesList = [];
     this.load();
   },
   load: function () {
     var list = github.getSubs();
     this.totle = list.length;
     this.count = 0;
+    var that = this;
 
-    if (0 === this.totle){
+    if (0 === this.totle) {
       that.setData({
-        list: []
+        issuesList: []
       });
     } else {
-      list.map(this.get, this);
+      Promise.all(list.map(that.get, that))
+        .then(function () {
+          that.setData({
+            issuesList: that.data.issuesList
+          });
+        }).catch(function (err) {
+          console.log('catch exception' + err)
+        })
     }
   },
   get: function (item) {
-    var list = this.data.list;
-
     var that = this;
-    github.getUserInfo(item).then(function (userinfo) {
+    return github.getUserInfo(item).then(function (userinfo) {
       that.count = that.count + 1;
-
       userinfo = Object.assign({}, item, userinfo);
-      list.push(userinfo);
-      that.setData({
-        list: list
-      });
-    }).catch(function () {
-      that.count = that.count + 1;
-      that.setData({
-        list: list
-      });
+      return github.getIssues(userinfo).then(function (issues) {
+        issues = issues.map(function (item) {
+          var listItem = {};
+          listItem.created_at = item.created_at.split('T')[0];
+          listItem.owner = userinfo.owner;
+          listItem.repo = userinfo.repo;
+          listItem.number = item.number;
+          listItem.title = item.title;
+          listItem.avatar_url = item.user.avatar_url;
+          listItem.login = item.user.login;
+          listItem.id = item.id;
+          listItem.isReaded = item.isReaded;
+          return listItem;
+        }).filter(function(item){
+          return !item.isReaded;
+        });
+
+        var tempList = that.data.issuesList;
+        that.data.issuesList = tempList.concat(issues);
+        return new Promise(function (resolve, reject) {
+          resolve();
+        });
+      })
     });
   }
 })
