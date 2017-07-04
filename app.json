@@ -16,26 +16,26 @@
       {
         "pagePath": "page/subscription/index",
         "text": "新消息",
-        "iconPath": "../image/icon_home.png",
-        "selectedIconPath": "../image/icon_home_HL.png"
+        "iconPath": "image/icon_home.png",
+        "selectedIconPath": "image/icon_home_HL.png"
       },
       {
         "pagePath": "page/subscription/pages/history/index",
         "text": "历史消息",
-        "iconPath": "../image/icon_history.png",
-        "selectedIconPath": "../image/icon_history_HL.png"
+        "iconPath": "image/icon_history.png",
+        "selectedIconPath": "image/icon_history_HL.png"
       },
       {
         "pagePath": "page/subscription/pages/find/index",
         "text": "发现",
-        "iconPath": "../image/icon_find.png",
-        "selectedIconPath": "../image/icon_find_HL.png"
+        "iconPath": "image/icon_find.png",
+        "selectedIconPath": "image/icon_find_HL.png"
       },
       {
         "pagePath": "page/subscription/pages/user/index",
         "text": "我的",
-        "iconPath": "../image/icon_user.png",
-        "selectedIconPath": "../image/icon_user_HL.png"
+        "iconPath": "image/icon_user.png",
+        "selectedIconPath": "image/icon_user_HL.png"
       }
     ]
   },
