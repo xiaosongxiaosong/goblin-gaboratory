@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "dva-cli": "^0.8.2"
+  }
+}
