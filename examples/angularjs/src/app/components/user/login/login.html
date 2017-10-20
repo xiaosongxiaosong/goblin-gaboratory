@@ -1,0 +1,36 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2 md-truncate flex>登陆</h2>
+  </div>
+</md-toolbar>
+<md-card-content>
+  <md-input-container class="md-icon-float md-block">
+    <!-- Use floating label instead of placeholder -->
+    <label>用户名</label>
+    <md-icon>perm_identity</md-icon>
+    <input ng-model="user.name" type="text">
+  </md-input-container>
+  <!--<i class="material-icons">perm_identity</i>-->
+  <md-input-container md-no-float class="md-block">
+    <label>密码</label>
+    <md-icon>lock_outline</md-icon>
+    <input ng-model="user.password" type="password">
+  </md-input-container>
+  <div layout="row" layout-align="space-between center">
+    <md-checkbox name="tos" ng-model="project.tos" flex="50">
+      30天内记住我
+    </md-checkbox>
+    <md-button>忘记密码</md-button>
+  </div>
+  <div layout="column" layout-align="center center">
+    <md-button class="md-primary md-raised">登录</md-button>
+  </div>
+  <div>
+    使用合作账号进行登陆
+  </div>
+  <div>
+    没有趣观账号？
+    <md-button>立即注册趣观账号</md-button>
+  </div>
+  <!--<md-button class="md-accent md-raised">登录</md-button>-->
+</md-card-content>

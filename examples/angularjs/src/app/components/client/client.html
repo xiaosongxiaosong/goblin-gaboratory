@@ -1,0 +1,37 @@
+<div layout="column" class="contaier">
+  <md-toolbar layout="row">
+    <navbar class="md-toolbar-tools">
+      <md-menu md-offset="0 46">
+        <!-- Trigger element is a md-button with an icon -->
+        <span class="group-button">
+          <md-button class="left">
+            <span>测试</span>
+          </md-button><md-button class="right" ng-click="$mdMenu.open($event)">
+            <md-tooltip md-direction="bottom">切换店铺</md-tooltip>
+            <i class="material-icons">expand_more</i>
+          </md-button>
+        </span>
+        <md-menu-content>
+          <md-menu-item>
+            <md-button>Do Something</md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <!--<md-button>
+        <md-tooltip md-direction="bottom">切换店铺</md-tooltip>
+        <span>测试</span>
+        <i class="material-icons">expand_more</i>
+      </md-button>-->
+
+      <!--<section layout="row" layout-align="center center">-->
+
+      <!--</section>-->
+    </navbar>
+    <!--<div class="md-toolbar-tools">
+      <h1 layout-align-gt-sm="center">
+        Hello World
+      </h1>
+    </div>-->
+  </md-toolbar>
+  <div flex ui-view class="contaier"></div>
+</div>

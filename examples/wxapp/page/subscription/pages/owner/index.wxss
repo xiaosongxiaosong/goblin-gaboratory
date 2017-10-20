@@ -1,0 +1,9 @@
+@import "../../../common/index.wxss";
+.unsubscription-container{
+    position: relative;
+}
+.unsubscription{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
