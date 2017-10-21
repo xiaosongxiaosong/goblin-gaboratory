@@ -5,7 +5,7 @@ function parseJSON(response) {
 }
 
 function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
+  if (200 <= response.status && 300 > response.status) {
     return response;
   }
 

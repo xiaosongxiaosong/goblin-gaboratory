@@ -1,0 +1,65 @@
+@import "../../themes/index.less";
+// Info && ProjectInfo
+.italic {
+  font-style: italic;
+}
+
+.descContiner {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+// ProjectInfo
+.projectInfo {
+  .projectLogo {
+    float: left;
+  }
+  .projectDesc {
+    margin-left: 50px;
+  }
+}
+
+// CompanyLink
+.companyLink {
+  text-align: center;
+}
+
+.absolute{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Poster
+.poster {
+  .absolute;
+  background: transparent center no-repeat;
+  background-size: 100% auto;
+}
+.posterMask{
+  .absolute;
+  background: rgba(0,0,0,0.3);
+}
+
+// StartPlayButton
+.startPlayButton{
+  .absolute;
+  background: url(http://opensight-public.oss-cn-hangzhou.aliyuncs.com/img/play.png) no-repeat center;
+  cursor: pointer;
+}
+
+// SessionCountdown
+.sessionCountdown{
+  .absolute;
+  color: #fff;
+  div{
+    text-align: center;
+    margin: 1.5em 0;
+    line-height: 1.6em;
+    font-size: 14px;
+  }
+}
