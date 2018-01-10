@@ -1,12 +1,23 @@
-# goblin-gaboratory
-前端框架从零开始
+# 微信 Github blog 订阅器
 
-## Doing
-- [angular1.x es6 webpack2 component 从零开始](https://github.com/gtUserName/goblin-gaboratory/issues/4)
+使用 [leancloud](https://leancloud.cn) 搭建后端，小程序做前端界面，微信订阅号菜单做另外一个入口
 
-- [微信小程序](https://github.com/gtUserName/goblin-gaboratory/issues/5)
+## 定时任务
+- [ ] 代码自动部署
+- [ ] sync repos and repos owner info
+- [ ] sync repo issues
 
-## TODO
-- angular1.x webpack component
-- reactjs
-- ionic
+## API
+- [ ] /login (POST)
+- [ ] /repos (GET)
+- [ ] /repos/:repo/issues (GET)
+- [ ] /users/:userId/repos (GET, POST, DELETE)
+- [ ] /users/:userId/issues (GET)
+- [ ] /users/:userId/mark/issues/:issue (GET POST)
+
+## weapp
+- [ ] login
+- [ ] all repos
+- [ ] repo page
+- [ ] user subscriptions
+- [ ] user issues
