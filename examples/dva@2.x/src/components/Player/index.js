@@ -5,7 +5,7 @@ import NativeHLSPlayer from './NativeHLSPlayer';
 const loadEmptySrcAfterClick = () => {
   if (mejs.Features.isiOS || mejs.Features.isAndroid) {
     // console.log('video number: ', $('video').length);
-    $('video').map(function (i, el) {
+    $('video').map((i, el) => {
       this.src = '';
       this.load();
       return el;
