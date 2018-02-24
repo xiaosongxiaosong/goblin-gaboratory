@@ -1513,6 +1513,10 @@ chownr@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/chownr/download/chownr-1.0.1.tgz#e2a75042a9551908bebd25b8523d5f9769d79181"
 
+chrome.sockets.tcp.xhr@^0.0.2:
+  version "0.0.2"
+  resolved "http://registry.npm.taobao.org/chrome.sockets.tcp.xhr/download/chrome.sockets.tcp.xhr-0.0.2.tgz#fcc65f39b55d2fce284b763f41519ef06b49b641"
+
 ci-info@^1.0.0:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/ci-info/download/ci-info-1.1.2.tgz#03561259db48d0474c8bdc90f5b47b068b6bbfb4"

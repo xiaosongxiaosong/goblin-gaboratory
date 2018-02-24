@@ -12,7 +12,8 @@
   },
   "permissions": [
     "https://github.com/*",
-    "storage"
+    "storage",
+    "socket"
   ],
   "icons": {
     "16": "calculator-16.png",
