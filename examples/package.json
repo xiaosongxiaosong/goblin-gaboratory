@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "dva-cli": "^0.8.2"
+  },
+  "devDependencies": {
+    "create-react-app": "^1.5.2"
   }
 }

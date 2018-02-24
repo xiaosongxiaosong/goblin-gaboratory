@@ -1,0 +1,29 @@
+{
+  "name": "create-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ant-design-pro": "^1.1.0",
+    "antd": "^3.2.1",
+    "dva": "^2.1.0",
+    "dva-loading": "^1.0.4",
+    "moment": "^2.20.1",
+    "numeral": "^2.0.6",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1",
+    "sjcl": "^1.0.7",
+    "ua-device": "^0.1.10"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.6.5",
+    "react-app-rewire-less": "^2.1.0",
+    "react-app-rewired": "^1.4.1"
+  },
+  "homepage": "."
+}
