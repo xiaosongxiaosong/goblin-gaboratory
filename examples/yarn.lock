@@ -917,7 +917,7 @@ core-util-is@~1.0.0:
 
 create-react-app@^1.5.2:
   version "1.5.2"
-  resolved "http://registry.npm.taobao.org/create-react-app/download/create-react-app-1.5.2.tgz#2639e5d2f88e8777977beb6a8d9cbc04cf70091e"
+  resolved "https://registry.yarnpkg.com/create-react-app/-/create-react-app-1.5.2.tgz#2639e5d2f88e8777977beb6a8d9cbc04cf70091e"
   dependencies:
     chalk "^1.1.1"
     commander "^2.9.0"
