@@ -1,6 +1,7 @@
 import dva from 'dva';
 import { createMemoryHistory } from 'history';
 import 'antd/dist/antd.less';
+import 'ant-design-pro/dist/ant-design-pro.css';
 import './index.less';
 
 // 1. Initialize

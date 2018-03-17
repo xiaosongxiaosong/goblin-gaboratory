@@ -17,8 +17,7 @@
   color: @text-color-dark;
   height: @header-height;
   line-height: @header-height;
-  box-shadow: @shadow-1-down;
-  // background: @heading-color;
+  box-shadow: @shadow-1-down; // background: @heading-color;
 }
 
 .logo {
@@ -93,6 +92,9 @@
   background: @component-background;
   -ms-overflow-style: none;
   box-shadow: @shadow-1-right;
+   :global(.ant-menu) {
+    height: 100%;
+  }
 }
 
 .sider::-webkit-scrollbar {

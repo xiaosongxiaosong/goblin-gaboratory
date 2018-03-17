@@ -10,13 +10,13 @@
     "install-node": "6.11.1"
   },
   "dependencies": {
+    "ant-design-pro": "^1.1.0",
     "antd": "^3.1.4",
     "babel-runtime": "^6.9.2",
     "chrome.sockets.tcp.xhr": "^0.0.2",
     "dva": "^2.0.0",
-    "query-string": "^6.0.0",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
