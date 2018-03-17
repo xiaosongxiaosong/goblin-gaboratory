@@ -75,6 +75,9 @@ export default {
       // reduce((accumulator, currentValue) => [...accumulator, ...currentValue]);
       yield put({ type: 'save', payload: { issues: [].concat(...issues).sort((a, b) => a.created_at - b.created_at) } });
     },
+    *routerReduxPush({ payload }, { put }) {
+      yield put(routerRedux.push(payload));
+    },
     // *getOwners({ payload }, { put, call }) {},
   },
 
