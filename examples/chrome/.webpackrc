@@ -1,5 +1,8 @@
 {
   "entry": "src/index.js",
+  "theme": {
+    "@icon-url": "./iconfont/font_148784_dky7e838xq4obt9"
+  },
   "env": {
     "development": {
       "extraBabelPlugins": [

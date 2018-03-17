@@ -1,6 +1,7 @@
 import dva from 'dva';
 import { createMemoryHistory } from 'history';
-import './index.css';
+import 'antd/dist/antd.less';
+import './index.less';
 
 // 1. Initialize
 const app = dva({
