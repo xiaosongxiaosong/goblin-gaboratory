@@ -4,7 +4,7 @@ import { connect } from 'dva';
 import { Button, Card, List } from 'antd';
 import Markdown from 'react-markdown';
 import PageHeader from 'ant-design-pro/lib/PageHeader';
-import Ellipsis from 'ant-design-pro/lib/Ellipsis';
+// import Ellipsis from 'ant-design-pro/lib/Ellipsis';
 
 // import Avatar from '../../components/Avatar';
 
