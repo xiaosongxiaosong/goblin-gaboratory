@@ -1,19 +1,20 @@
 import React from 'react';
 // import { connect } from 'dva';
-// import { Icon } from 'antd';
-import { Link } from 'dva/router';
-
+import { Icon } from 'antd';
 import styles from './Loading.less';
 
 
 const Loading = () => {
   return (
     <div className={styles.loading}>
-      <div>
-        <Link to="/all">all</Link>
-      </div>
+      <Icon type="loading" />
     </div>
   );
 };
 
+// function mapStateToProps(state) {
+//   return { ...state.client };
+// }
+
+// export default Show;
 export default Loading;

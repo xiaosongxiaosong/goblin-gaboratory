@@ -1,20 +1,22 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { connect } from 'dva';
+// import moment from 'moment';
 import { Button, Card, List } from 'antd';
-import Markdown from 'react-markdown';
 import PageHeader from 'ant-design-pro/lib/PageHeader';
+// import { MarkdownPreview } from 'react-marked-markdown';
 // import Ellipsis from 'ant-design-pro/lib/Ellipsis';
-
-// import Avatar from '../../components/Avatar';
+import Loading from '../Loading';
+import Issue from '../Issue';
 
 import styles from './index.less';
+
 
 class All extends React.PureComponent {
   render() {
     const { issues } = this.props;
     if (!issues) {
-      return <div>loading</div>;
+      return <Loading />;
     }
     return (
       <React.Fragment>
@@ -27,26 +29,11 @@ class All extends React.PureComponent {
           <Card bordered={false}>
             <List
               size="large"
-              itemLayout="vertical"
-              rowKey="id"
+              // itemLayout="vertical"
+              // rowKey="id"
+              className={styles.list}
               dataSource={issues}
-              renderItem={item => (
-                <List.Item
-                  key={item.url}
-                  actions={[
-                    <a>阅读全文</a>,
-                    <a>收藏/取消收藏</a>,
-                    <a>原文链接</a>,
-                  ]}
-                >
-                  <List.Item.Meta
-                    title={item.title}
-                    description={<div>{item.user.login}</div>}
-                  />
-                  {/* <Ellipsis lines={5}>{marked(item.body)}</Ellipsis> */}
-                  <Markdown source={item.body} />
-                </List.Item>
-              )}
+              renderItem={item => <Issue issue={item} />}
             />
           </Card>
         </div>

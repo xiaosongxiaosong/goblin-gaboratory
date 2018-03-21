@@ -13,12 +13,11 @@
     "ant-design-pro": "^1.1.0",
     "antd": "^3.1.4",
     "babel-runtime": "^6.9.2",
-    "chrome.sockets.tcp.xhr": "^0.0.2",
     "dva": "^2.0.0",
+    "highlight.js": "^9.12.0",
     "marked": "^0.3.17",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-markdown": "^3.3.0"
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
