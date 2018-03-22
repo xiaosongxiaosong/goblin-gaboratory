@@ -5,11 +5,11 @@ http://119.29.22.177/goblin-gaboratory/examples/dva/dist/
 
 ## 基础框架
 
-1. react + dva + ant design
+1. react + dva + ant design + ant design pro
 
-2. roadhog build --watch
+2. browserHistory
 
-3. memoryHistory
+3. marked + highlight.js
 
 ## 问题
 
@@ -17,8 +17,7 @@ http://119.29.22.177/goblin-gaboratory/examples/dva/dist/
 
 ## 参考资料
 
-1. [chrome 应用开发文档](https://crxdoc-zh.appspot.com/extensions/overview)
+1. [react router项目部署nginx 配置问题](https://www.jianshu.com/p/51ba2bec00c7)
 
-2. [Chrome Extensions 插件扩展程序开发入门](https://github.com/diamont1001/blog/issues/12)
+2. [Using highlight.js with marked](https://shuheikagawa.com/blog/2015/09/21/using-highlight-js-with-marked/)
 
-3. []()
