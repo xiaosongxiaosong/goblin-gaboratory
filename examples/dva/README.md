@@ -11,9 +11,6 @@ http://119.29.22.177/goblin-gaboratory/examples/dva/dist/
 
 3. marked + highlight.js
 
-## 问题
-
-1. chrome app CSP　无法设置，导致无法加载远程　font-src 和 img-src，特别是 img-src 无法加载的话博客中的图片都没法看了
 
 ## 参考资料
 
