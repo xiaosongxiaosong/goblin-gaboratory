@@ -1,6 +1,7 @@
 import { routerRedux } from 'dva/router';
-import storage from '../utils/storage';
+// import storage from '../utils/storage';
 import githubServices from '../services/github';
+import userServices from '../services/user';
 
 export default {
 
@@ -32,33 +33,25 @@ export default {
       yield put({ type: 'save' });
     },
     *loading({ payload }, { put, call }) {
-      try {
-        const { items } = yield call(storage.get, 'repos');
-        yield put({ type: 'save', payload: { repos: JSON.parse(items) } });
-      } catch (errMsg) {
-        yield put({
-          type: 'save',
-          payload: {
-            repos: [
-              'https://github.com/sorrycc/blog',
-              'https://github.com/dwqs/blog',
-            ],
-          },
-        });
-      }
-      yield put({ type: 'getOwners' });
-      yield put({ type: 'getIssues' });
+      const [repos, records, favorites] = yield [
+        call(userServices.getLocalRepos),
+        call(userServices.getLocalReadRecords),
+        call(userServices.getLocalFavorites),
+      ];
+      yield put({ type: 'save', payload: { repos, records, favorites } });
+      yield put({ type: 'getOwners', payload: repos });
+      yield put({ type: 'getIssues', payload: repos });
       yield put(routerRedux.push('/all'));
     },
-    *getOwners({ payload }, { put, call, select }) {
-      const { repos } = yield select(state => state.app);
-      const list = yield repos.map(it => call(githubServices.getUserInfo, it));
+    *getOwners({ payload }, { put, call }) {
+      // const { repos } = yield select(state => state.app);
+      const list = yield payload.map(it => call(githubServices.getUserInfo, it));
       const owners = list.map(({ data }, index) => {
-        const matchObj = repos[index].match(/https:\/\/github.com\/(\w+)\/(\w+)(\/.*)?/);
+        const matchObj = payload[index].match(/https:\/\/github.com\/(\w+)\/(\w+)(\/.*)?/);
         if (data) {
-          return { ...data, repo: matchObj[2], repo_url: repos[index] };
+          return { ...data, repo: matchObj[2], repo_url: payload[index] };
         } else if (matchObj) {
-          return { login: matchObj[1], name: matchObj[1], repo: matchObj[2], repo_url: repos[index] };
+          return { login: matchObj[1], name: matchObj[1], repo: matchObj[2], repo_url: payload[index] };
         } else {
           return null;
         }
@@ -66,17 +59,39 @@ export default {
       yield put({ type: 'save', payload: { owners } });
     },
     *getIssues({ payload }, { put, call, select }) {
-      const { repos } = yield select(state => state.app);
-      const list = yield repos.map(it => call(githubServices.getIssues, it));
+      // const { repos } = yield select(state => state.app);
+      const list = yield payload.map(it => call(githubServices.getIssues, it));
       // const issues = list.map(({ data }) => (data || []));
-      // debugger;
-      const issues = list.map(({ data }) => (data || []));
-      // [].concat(...issues)
-      // reduce((accumulator, currentValue) => [...accumulator, ...currentValue]);
-      yield put({ type: 'save', payload: { issues: [].concat(...issues).sort((a, b) => a.created_at - b.created_at) } });
+      const { records, favorites } = yield select(state => state.app);
+      const issues = list.map(({ data }) => (data || [])).reduce((accumulator, currentValue) => {
+        return [...accumulator, ...currentValue];
+      }).map((it) => {
+        return { ...it, read: records.includes(it.url), favorite: favorites.includes(it.url) };
+      });
+      yield put({
+        type: 'save',
+        payload: {
+          issues: issues.sort((a, b) => {
+            return new Date(b.created_at) - new Date(a.created_at);
+          }),
+        },
+      });
     },
     *routerReduxPush({ payload }, { put }) {
       yield put(routerRedux.push(payload));
+    },
+    *markAsRead({ payload }, { call }) {
+      payload.read = true;    // eslint-disable-line
+      yield call(userServices.markAsLocalRead, payload.url);
+      // yield put(routerRedux.push(payload));
+    },
+    *toggleFavorite({ payload }, { call }) {
+      payload.favorite = !payload.favorite;    // eslint-disable-line
+      if (payload.favorite) {
+        yield call(userServices.markAsLocalFavorite, payload.url);
+      } else {
+        yield call(userServices.unmarkAsLocalFavorite, payload.url);
+      }
     },
     // *getOwners({ payload }, { put, call }) {},
   },

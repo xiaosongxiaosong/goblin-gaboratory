@@ -12,22 +12,23 @@ class Issue extends React.PureComponent {
     // eslint-disable-next-line
     const {
       issue,
-      expanded,
+      opened,
       toggle,
-      toggleStar,
+      toggleFavorite,
     } = this.props;
+    // debugger;
     return (
       <List.Item className={styles.issue}>
         <Avatar size="small" src={issue.user.avatar_url} />
         <div className={styles.user}>{issue.user.login}</div>
-        <div onClick={() => toggle(issue)} className={styles.title}>{issue.title}</div>
+        <div onClick={() => toggle(issue)} className={issue.read ? styles.title : styles.unreadTitle}>{issue.title}</div>
         <div className={styles.time}>{moment(issue.created_at).format('YYYY年M月D日')}</div>
         <div className={styles.actions}>
-          <Icon onClick={() => toggleStar(issue)} type="heart-o" />
-          <Icon onClick={() => toggleStar(issue)} type="heart" />
+          {(!issue.favorite) && <Icon onClick={() => toggleFavorite(issue)} type="heart-o" />}
+          {issue.favorite && <Icon onClick={() => toggleFavorite(issue)} type="heart" />}
           <Icon type="enter" />
         </div>
-        {expanded === issue.html_url && <IssueDetail issue={issue} />}
+        {opened === issue.url && <IssueDetail issue={issue} />}
       </List.Item>
     );
   }
@@ -35,9 +36,9 @@ class Issue extends React.PureComponent {
 
 Issue.propTypes = {
   issue: PropTypes.object,
-  expanded: PropTypes.string,
+  opened: PropTypes.string,
   toggle: PropTypes.func,
-  toggleStar: PropTypes.func,
+  toggleFavorite: PropTypes.func,
 };
 
 export default Issue;

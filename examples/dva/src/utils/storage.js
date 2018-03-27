@@ -1,25 +1,25 @@
 
 
 export default {
-  set: (items) => {
-    return new Promise((reslove, reject) => {
+  set: (key, value) => {
+    return new Promise((reslove) => {
       try {
-        chrome.storage.sync.set(items, () => {
-          reslove(true);
-        });
+        const str = JSON.stringify(value);
+        localStorage.setItem(key, str);
+        reslove({ data: value });
       } catch (errMsg) {
-        reject({ errMsg });
+        reslove({ errMsg });
       }
     });
   },
-  get: (keys) => {
-    return new Promise((reslove, reject) => {
+  get: (key) => {
+    return new Promise((reslove) => {
       try {
-        chrome.storage.sync.get(keys, (items) => {
-          reslove({ items });
-        });
+        const str = localStorage.getItem(key);
+        const data = JSON.parse(str);
+        reslove({ data });
       } catch (errMsg) {
-        reject({ errMsg });
+        reslove({ errMsg });
       }
     });
   },

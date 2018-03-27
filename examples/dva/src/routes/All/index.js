@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'dva';
 // import moment from 'moment';
 import { Button, Card, List } from 'antd';
@@ -13,8 +13,30 @@ import styles from './index.less';
 
 
 class All extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      opened: undefined,
+    };
+    this.toggle = this.toggle.bind(this);
+    this.toggleFavorite = this.toggleFavorite.bind(this);
+  }
+  toggle(item) {
+    if (this.state.opened === item.url) {
+      this.setState({ opened: undefined });
+    } else {
+      if (!item.read) {
+        this.props.dispatch({ type: 'app/markAsRead', payload: item });
+      }
+      this.setState({ opened: item.url });
+    }
+  }
+  toggleFavorite(item) {
+    this.props.dispatch({ type: 'app/toggleFavorite', payload: item });
+  }
   render() {
     const { issues } = this.props;
+    const { opened } = this.state;
     if (!issues) {
       return <Loading />;
     }
@@ -33,7 +55,7 @@ class All extends React.PureComponent {
               // rowKey="id"
               className={styles.list}
               dataSource={issues}
-              renderItem={item => <Issue issue={item} />}
+              renderItem={item => <Issue issue={item} opened={opened} toggle={this.toggle} toggleFavorite={this.toggleFavorite} />}
             />
           </Card>
         </div>
@@ -43,11 +65,11 @@ class All extends React.PureComponent {
 }
 
 All.propTypes = {
-  // repos: PropTypes.array,
-  // issues: PropTypes.array,
+  issues: PropTypes.array,
+  dispatch: PropTypes.func,
 };
 
 export default connect(state => ({
-  repos: state.app.repos,
+  // repos: state.app.repos,
   issues: state.app.issues,
 }))(All);
