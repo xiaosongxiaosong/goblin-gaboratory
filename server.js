@@ -12,7 +12,7 @@ AV.init({
 var app = express();
 app.use(AV.express());
 app.use(express.static(path.resolve(__dirname, './dva/dist')))
-app.get('/dva/*', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './dva/dist/index.html'))
 })
 app.listen(process.env.LEANCLOUD_APP_PORT);
