@@ -1,8 +1,14 @@
 {
-  "dependencies": {
+  "devDependencies": {
+    "create-react-app": "^1.5.2",
     "dva-cli": "^0.9.2"
   },
-  "devDependencies": {
-    "create-react-app": "^1.5.2"
+  "dependencies": {
+    "express": "^4.16.3",
+    "leancloud-storage": "^3.6.3",
+    "leanengine": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
