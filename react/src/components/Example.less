@@ -1,0 +1,74 @@
+.container {
+  position: relative;
+  width: 500px;
+  height: 0;
+  padding-top: 7.5em;
+  border: #000 1px solid;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+  overflow: hidden;
+  div{
+    position: absolute;
+    top: 7.5em;
+    left: 0;
+    text-align: center;
+  }
+  // div:nth-child(1){
+  //   top: 7.5em;
+  // }
+  // div:nth-child(2){
+  //   top: 7.5em;
+  // }
+  // div:nth-child(3){
+  //   top: 7.5em;
+  // }
+  // div:nth-child(4){
+  //   top: 7.5em;
+  // }
+  // div:nth-child(5){
+  //   top: 7.5em;
+  // }
+}
+
+.fadeEnter {
+  opacity: 0.01;
+}
+
+.fadeEnterActive {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fadeExit {
+  opacity: 1;
+}
+
+.fadeExitActive {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+.linearEnter {
+  // top: 24px;
+  transform: translate(0, 0);
+}
+
+.linearEnterActive {
+  // top: 0;
+  transform: translate(0, -24px);
+  transition: transform 1000ms linear;
+}
+
+.linearExit {
+  // top: 0;
+  transform: translate(0, -24px);
+}
+
+.linearExitActive {
+  transform: translate(0, -144px);
+  // top: 24px;
+  transition: transform 5000ms linear;
+}
+
+// transition: transform 500ms linear;
