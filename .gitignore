@@ -9,3 +9,4 @@ node_modules/
 # misc
 .DS_Store
 npm-debug.log*
+create-react-app/Notes.md
