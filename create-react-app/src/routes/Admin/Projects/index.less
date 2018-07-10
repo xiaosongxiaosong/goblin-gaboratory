@@ -1,0 +1,64 @@
+@import "../../../themes/index.less";
+.projectTitle {
+  cursor: pointer;
+  color: @heading-color;
+}
+
+.container {
+  padding: @padding-xs;
+}
+
+.filterKey {
+  min-width: 8em;
+}
+
+.filterValue {
+  width: 120px;
+}
+
+.actionButton {
+  margin-left: 1em;
+}
+
+.listItem {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.listItemValue {
+  margin-top: 4px;
+}
+
+.desc {
+  .listItem;
+  width: 12em;
+}
+
+.ctime {
+  .listItem;
+  width: 12em;
+}
+
+@media (min-width: @screen-sm-min) {
+  .container {
+    padding: @padding-sm;
+  }
+  .filterValue {
+    width: 180px;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .container {
+    padding: @padding-md;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .container {
+    padding: @padding-lg;
+  }
+  .filterValue {
+    width: 240px;
+  }
+}

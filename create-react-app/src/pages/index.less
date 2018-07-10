@@ -1,0 +1,41 @@
+@import "../themes/index.less";
+
+html,
+body,
+ :global(#root) {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+pre {
+  font-family: @font-family;
+}
+
+.globalSpin {
+  width: 100%;
+  margin: 40px 0 !important;
+}
+
+// :global(.ant-menu-inline) {
+//   border-right: 0 none;
+// }
+
+//  :global(.ant-menu-item) :global(.iconfont) {
+//   min-width: 14px;
+//   margin-right: 10px;
+// }
+
+//  :global(.ant-menu-inline-collapsed)> :global(.ant-menu-item) :global(.iconfont)+span {
+//   max-width: 0;
+//   display: inline-block;
+//   opacity: 0;
+// }
+
+// :global(.ant-menu-inline-collapsed-tooltip) :global(.iconfont) {
+//   display: none;
+// }

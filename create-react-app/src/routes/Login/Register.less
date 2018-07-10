@@ -1,0 +1,72 @@
+@import "../../themes/index.less";
+.form {
+  // position: absolute;
+  // top: 15%;
+  // left: 50%;
+  // margin: 0 0 0 -174px;
+  width: 348px; // height: 320px;
+  padding: 24px 24px 0 24px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, .08);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  .bd {
+    flex: 1;
+  }
+}
+
+.logo {
+  img {
+    margin-right: @padding-sm;
+  }
+  margin-bottom: @padding-lg;
+}
+
+.sms+ :global(.ant-input-group-addon) {
+  padding: 0;
+  border: 0 none;
+   :global(.ant-btn) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0 none;
+  }
+}
+
+.loginBtn {
+  margin-top: @padding-sm;
+  margin-bottom: @padding-sm;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.qrcodeContainer {
+  height: 400px;
+  width: 300px;
+}
+
+.ant-spin-container,
+.ant-spin-nested-loading {
+  height: 100%;
+}
+
+.forgot {
+  float: right;
+}
+
+.weui_btn_primary {
+  background-color: #1AAD19;
+  border-color: #1AAD19;
+}
+
+.wx_login {
+  float: right;
+  font-size: 0.75rem;
+  line-height: 1rem; // color: #1AAD19;
+  padding-right: 1.25rem;
+  background: url("http://opensight-public.oss-cn-hangzhou.aliyuncs.com/img/icon16_wx_logo.png") no-repeat right center;
+}
