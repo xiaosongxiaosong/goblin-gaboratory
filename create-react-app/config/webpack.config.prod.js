@@ -172,6 +172,61 @@ module.exports = {
           // in the main CSS file.
           {
             test: /\.(css|less)$/,
+            exclude: /node_modules/,
+            loader: ExtractTextPlugin.extract(
+              Object.assign(
+                {
+                  fallback: {
+                    loader: require.resolve('style-loader'),
+                    options: {
+                      hmr: false,
+                    },
+                  },
+                  use: [
+                    {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                        importLoaders: 1,
+                        modules: true,
+                        minimize: true,
+                        sourceMap: shouldUseSourceMap,
+                        localIdentName: '[local]___[hash:base64:5]',
+                      },
+                    },
+                    {
+                      loader: require.resolve('postcss-loader'),
+                      options: {
+                        // Necessary for external CSS imports to work
+                        // https://github.com/facebookincubator/create-react-app/issues/2677
+                        ident: 'postcss',
+                        plugins: () => [
+                          require('postcss-flexbugs-fixes'),
+                          autoprefixer({
+                            browsers: [
+                              '>1%',
+                              'last 4 versions',
+                              'Firefox ESR',
+                              'not ie < 9', // React doesn't support IE8 anyway
+                            ],
+                            flexbox: 'no-2009',
+                          }),
+                        ],
+                      },
+                    },
+                    {
+                      loader: require.resolve('less-loader'), // compiles Less to CSS
+                      options: { javascriptEnabled: true },
+                    },
+                  ],
+                },
+                extractTextPluginOptions
+              )
+            ),
+            // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+          },
+          {
+            test: /\.(css|less)$/,
+            include: /node_modules/,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -268,6 +323,7 @@ module.exports = {
     // }),
     new HtmlWebpackPlugin({
       inject: true,
+      chunks: ["index"],
       template: paths.appHtml,
       minify: {
         removeComments: true,
