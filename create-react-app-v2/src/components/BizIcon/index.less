@@ -1,0 +1,18 @@
+:global(.ant-menu-inline) {
+  border-right: 0 none;
+}
+
+ :global(.ant-menu-item) :global(.iconfont) {
+  min-width: 14px;
+  margin-right: 10px;
+}
+
+ :global(.ant-menu-inline-collapsed)> :global(.ant-menu-item) :global(.iconfont)+span {
+  max-width: 0;
+  display: inline-block;
+  opacity: 0;
+}
+
+:global(.ant-menu-inline-collapsed-tooltip) :global(.iconfont) {
+  display: none;
+}

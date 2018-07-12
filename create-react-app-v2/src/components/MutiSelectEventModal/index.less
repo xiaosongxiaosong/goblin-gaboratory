@@ -1,0 +1,41 @@
+@import "../../themes/index.less";
+
+.wrap{
+  width: 80%;
+  max-height: 80%;
+}
+.selectedNum{
+  color: @primary-color;
+  font-weight: 600;
+}
+
+.mutiSelectList {
+  :global(.ant-list-item){
+    padding-left: @padding-md * 3;
+  }
+  :global(.ant-checkbox-wrapper){
+    position: absolute;
+    left: @padding-md;
+    line-height: @line-height-base * 2;
+  }
+}
+
+.listItem {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 1em;
+}
+
+.listItemValue {
+  margin-top: 4px;
+}
+
+.startTime {
+  .listItem;
+  width: 12em;
+}
+
+.duration {
+  .listItem;
+  width: 8em;
+}

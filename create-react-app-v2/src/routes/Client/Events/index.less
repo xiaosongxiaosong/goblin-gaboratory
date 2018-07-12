@@ -1,0 +1,71 @@
+@import "../../../themes/index.less";
+
+.container {
+  padding: @padding-xs;
+}
+.searchInput{
+  width: 120px;
+}
+.actionButton{
+  margin-left: 1em;
+}
+// .listContent {
+//   font-size: 0;
+//   .listContentItem {
+//     color: @text-color-secondary;
+//     display: inline-block;
+//     vertical-align: middle;
+//     font-size: @font-size-base;
+//     margin-left: 40px;
+//     > span {
+//       line-height: 20px;
+//     }
+//     > p {
+//       margin-top: 4px;
+//       margin-bottom: 0;
+//       line-height: 22px;
+//     }
+//   }
+// }
+.listItem{
+  display: inline-block;
+  vertical-align: middle;
+}
+.listItemValue{
+  margin-top: 4px;
+}
+.startTime{
+  .listItem;
+  width: 12em;
+}
+.duration{
+  .listItem;
+  width: 8em;
+}
+.size{
+  .listItem;
+  width: 5em;
+}
+@media (min-width: @screen-sm-min) {
+  .container {
+    padding: @padding-sm;
+  }
+  .searchInput{
+    width: 240px;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .container {
+    padding: @padding-md;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .container {
+    padding: @padding-lg;
+  }
+  .searchInput{
+    width: 360px;
+  }
+}

@@ -1,0 +1,280 @@
+@import "../../themes/index.less";
+.square {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+  background: @layout-body-background;
+  .leftSider {
+    overflow: auto;
+    height: 100%;
+    float: left;
+    background: @component-background;
+    .tabpane {
+      padding-left: 1em;
+      padding-right: 1em;
+      overflow: auto;
+      position: relative;
+      p {
+        margin: 1em 0;
+      }
+      .tabpaneBottom {
+        position: absolute;
+        bottom: 10px;
+      }
+      .projectInfoConatiner {
+        margin-top: 20px;
+      }
+    }
+  }
+  .center {
+    position: relative;
+    height: 100%;
+    float: left;
+  }
+  .centerPlayer {
+    position: relative;
+    width: 100%;
+    background: #000;
+    .player {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: auto;
+    }
+  }
+  .bottomBar {
+    background: @component-background;
+    padding: 10px;
+    width: 100%;
+    line-height: 30px;
+    .bottomBarLeft {
+      line-height: 30px;
+    }
+    .bottomBarRight {
+      line-height: 30px;
+      float: right;
+      text-align: right;
+    }
+    .bottomBarDivide {
+      display: inline-block;
+      width: 20px;
+    }
+  }
+}
+
+.layout {
+  height: 100%;
+  width: 100%;
+  background: @layout-body-background;
+  @header-height: 50px;
+  @padding: 8px;
+  .header {
+    height: @header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: @component-background; // border-bottom: 1px solid #e7e7e7;
+    // z-index: 10;
+    display: flex;
+    align-items: center;
+    .logo {
+      margin-left: @header-height * 2/5;
+      margin-right: @header-height * 2/5;
+      min-width: @header-height * 4/5;
+      height: @header-height * 4/5;
+      background: #000;
+      position: relative;
+      img {
+        // width: 100%;
+        height: 100%;
+        width: auto;
+      }
+    }
+    .navbar {
+      // display: inline-block;
+      flex: 1;
+    }
+    .navbarExtra {
+      // float: right;
+      button {
+        height: @header-height;
+        line-height: @header-height;
+        padding: 0 20px;
+      }
+    }
+  } // @sider-width: 360px;
+  // .sider::-webkit-scrollbar {
+  //   display: none;
+  // }
+  .sider {
+    position: fixed;
+    margin-top: @header-height + @padding;
+    top: 0;
+    left: 0; // width: @sider-width;
+    height: 100%; // background: red;
+    overflow: auto; // -ms-overflow-style: none;
+    .siderContainer {
+      // padding-top: 8px;
+      padding-bottom: @header-height + @padding;
+      background: @component-background;
+    } // .tabpane {
+    //   overflow: auto;
+    //    ::-webkit-scrollbar {
+    //     display: none;
+    //   }
+    // }
+    .info {
+      padding-left: 1em;
+      padding-right: 1em;
+      overflow: auto;
+      -ms-overflow-style: none;
+    }
+    .info::-webkit-scrollbar {
+      display: none;
+    }
+    .projectInfoConatiner {
+      margin-top: 20px;
+    }
+  }
+  .content {
+    padding-top: @header-height; // margin-left: @sider-width;
+    .center {
+      background: @layout-body-background;
+      padding: @padding;
+      .centerPlayer {
+        position: relative;
+        background: #000;
+      }
+    }
+  }
+  @sider-width: 360px;
+  .sider {
+    width: @sider-width;
+  }
+  .content {
+    margin-left: @sider-width;
+  }
+  @media (max-width: @screen-lg-max) {
+    @sider-width: 360px;
+    .sider {
+      width: @sider-width;
+    }
+    .content {
+      margin-left: @sider-width;
+    }
+  }
+  @media (max-width: @screen-md-max) {
+    @sider-width: 240px;
+    .sider {
+      width: @sider-width;
+    }
+    .content {
+      margin-left: @sider-width;
+    }
+  }
+  @media (max-width: @screen-sm-max) {
+    @sider-width: 180px;
+    .sider {
+      width: @sider-width;
+    }
+    .content {
+      margin-left: @sider-width;
+    }
+  }
+  @media (max-width: @screen-xs-max) {
+    @sider-width: 180px;
+    .sider {
+      width: @sider-width;
+    }
+    .content {
+      margin-left: @sider-width;
+    }
+  }
+  .bottomBar {
+    background: @component-background;
+    padding: 10px;
+    width: 100%;
+    line-height: 30px;
+    .bottomBarLeft {
+      line-height: 30px;
+    }
+    .bottomBarRight {
+      line-height: 30px;
+      float: right;
+      text-align: right;
+    }
+    .bottomBarDivide {
+      display: inline-block;
+      width: 20px;
+    }
+  }
+}
+
+// .live{
+//   width: 100%;
+//   height: 100%;
+//   padding: 0;
+//   margin: 0;
+//   border: 0;
+//   overflow: hidden;
+//   background: @layout-body-background;
+//   .leftSider{
+//     overflow: auto;
+//     height: 100%;
+//     float: left;
+//     background: @component-background;
+//     .tabpane{
+//       padding-left: 1em;
+//       padding-right: 1em;
+//       overflow: auto;
+//       position: relative;
+//       p{
+//         margin: 1em 0;
+//       }
+//       .tabpaneBottom{
+//         position: absolute;
+//         bottom: 10px;
+//       }
+//     }
+//   }
+//   .center{
+//     position: relative;
+//     height: 100%;
+//     float: left;
+//   }
+//   .centerPlayer{
+//     position: relative;
+//     width: 100%;
+//     background: #000;
+//     .player{
+//       display: block;
+//       width: 100%;
+//       height: 100%;
+//       background: #000;
+//       overflow: auto;
+//     }
+//   }
+//   .bottomBar{
+//     background: @component-background;
+//     padding: 10px;
+//     width: 100%;
+//     line-height: 30px;
+//     .bottomBarLeft{
+//       line-height: 30px;
+//     }
+//     .bottomBarRight{
+//       line-height: 30px;
+//       float: right;
+//       text-align: right;
+//     }
+//     .bottomBarDivide{
+//       display: inline-block;
+//       width: 20px;
+//     }
+//   }
+// }

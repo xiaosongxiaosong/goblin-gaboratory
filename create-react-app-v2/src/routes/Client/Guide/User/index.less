@@ -1,0 +1,25 @@
+@import "../../../../themes/index.less";
+.form {
+  max-width: @screen-xs-min;
+  padding: 2*@padding-lg @padding-lg;
+  margin: 0 auto;
+}
+.sms+ :global(.ant-input-group-addon) {
+  padding: 0;
+  border: 0 none;
+   :global(.ant-btn) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0 none;
+  }
+}
+
+.blockBtn {
+  display: block;
+  width: 100%;
+}
+
+// .smsBtn {
+//   border-top-left-radius: 0;
+//   border-bottom-left-radius: 0;
+// }

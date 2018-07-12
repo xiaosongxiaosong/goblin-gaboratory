@@ -1,0 +1,44 @@
+@import "../../../themes/index.less";
+@margin-width: @padding-xs;
+.container {
+  padding: @margin-width @margin-width 0;
+}
+
+.col {
+  margin-bottom: @margin-width;
+}
+
+.loadMore {
+  .col;
+  text-align: center;
+}
+
+@media (min-width: @screen-sm-min) {
+  @margin-width: @padding-sm;
+  .container {
+    padding: @margin-width @margin-width 0;
+  }
+  .col {
+    margin-bottom: @margin-width;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  @margin-width: @padding-md;
+  .container {
+    padding: @margin-width @margin-width 0;
+  }
+  .col {
+    margin-bottom: @margin-width;
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  @margin-width: @padding-lg;
+  .container {
+    padding: @margin-width @margin-width 0;
+  }
+  .col {
+    margin-bottom: @margin-width;
+  }
+}
